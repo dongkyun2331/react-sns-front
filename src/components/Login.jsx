@@ -1,4 +1,5 @@
 import React from "react";
+import { GoogleOutlined } from "@ant-design/icons";
 import "firebase/compat/app";
 
 import { auth } from "../firebase";
@@ -13,7 +14,9 @@ const Login = () => {
           onClick={() =>
             auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider())
           }
-        ></div>
+        >
+          <GoogleOutlined /> Sign In with Google
+        </div>
       </div>
     </div>
   );
