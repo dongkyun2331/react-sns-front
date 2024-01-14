@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import WritePost from "./WritePost";
+import PostList from "./PostList";
 
 const Chats = () => {
   const [user] = useAuthState(auth);
@@ -24,6 +25,7 @@ const Chats = () => {
             Logout
           </button>
           <WritePost />
+          <PostList />
         </div>
       )}
     </div>
