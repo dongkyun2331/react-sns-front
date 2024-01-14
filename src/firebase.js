@@ -1,5 +1,6 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
+import "firebase/compat/database";
 
 export const auth = firebase
   .initializeApp({
@@ -12,3 +13,5 @@ export const auth = firebase
     appId: "1:180277115171:web:17d0bbd5fc982b12c7f496",
   })
   .auth();
+
+export const db = firebase.database();
