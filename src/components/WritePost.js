@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "firebase/compat/database";
-import { db } from "../firebase";
+import { db, auth } from "../firebase";
 
 const WritePost = () => {
   const [content, setContent] = useState("");
@@ -8,10 +8,18 @@ const WritePost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const timestamp = Date.now();
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const date = now.getDate();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const timestamp = `${year}-${month}-${date} ${hours}:${minutes}`;
+    const user = auth.currentUser;
     db.ref("posts").push({
       content,
-      author,
+      author: user.displayName,
+      photoURL: user.photoURL,
       timestamp,
     });
     setContent("");
@@ -21,21 +29,12 @@ const WritePost = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="content">Content:</label>
+        <label htmlFor="content"></label>
         <input
           type="text"
           id="content"
           value={content}
           onChange={(e) => setContent(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="author">Author:</label>
-        <input
-          type="text"
-          id="author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
         />
       </div>
       <button type="submit">Submit</button>

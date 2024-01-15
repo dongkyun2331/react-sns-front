@@ -8,6 +8,7 @@ const PostList = () => {
     const postsRef = db.ref("posts");
     postsRef.on("value", (snapshot) => {
       const posts = [];
+
       snapshot.forEach((childSnapshot) => {
         const post = {
           id: childSnapshot.key,
@@ -23,9 +24,10 @@ const PostList = () => {
     <ul>
       {posts.map((post) => (
         <li key={post.id}>
-          <p>Content: {post.content}</p>
-          <p>Author: {post.author}</p>
-          <p>Timestamp: {post.timestamp}</p>
+          <img src={post.photoURL} alt={post.author} />
+          <p> {post.author}</p>
+          <p> {post.content}</p>
+          <p> {post.timestamp}</p>
         </li>
       ))}
     </ul>
