@@ -25,10 +25,10 @@ const Chats = () => {
           <button onClick={handleLogout} className="logout-tab">
             Logout
           </button>
-          <WritePost />
-          <PostList className="post-list" />
         </div>
       )}
+      <WritePost />
+      <PostList className="post-list" />
     </div>
   );
 };

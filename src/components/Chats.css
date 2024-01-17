@@ -1,5 +1,10 @@
 /* Chats.css */
 
+.user-info {
+  position: fixed;
+  right: 0;
+}
+
 /* Style the logout button */
 .logout-tab {
   background-color: #f44336;

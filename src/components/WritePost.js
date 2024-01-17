@@ -29,15 +29,14 @@ const WritePost = () => {
 
   return (
     <form onSubmit={handleSubmit} id="form">
-      <div>
-        <label htmlFor="content"></label>
-        <input
-          type="text"
-          id="input"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
-      </div>
+      <input
+        type="text"
+        id="input"
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+        autocomplete="off"
+      />
+
       <button type="submit">Submit</button>
     </form>
   );
