@@ -4,6 +4,7 @@ import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import WritePost from "./WritePost";
 import PostList from "./PostList";
+import "./Chats.css";
 
 const Chats = () => {
   const [user] = useAuthState(auth);
@@ -16,16 +17,16 @@ const Chats = () => {
   };
 
   return (
-    <div>
+    <div className="chats-container">
       {user && (
-        <div>
+        <div className="user-info">
           <img src={user.photoURL} alt={user.displayName} />
           <p>{user.displayName}</p>
           <button onClick={handleLogout} className="logout-tab">
             Logout
           </button>
           <WritePost />
-          <PostList />
+          <PostList className="post-list" />
         </div>
       )}
     </div>

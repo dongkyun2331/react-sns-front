@@ -1,0 +1,16 @@
+/* Chats.css */
+
+/* Style the logout button */
+.logout-tab {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.logout-tab:hover {
+  background-color: #d32f2f;
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase";
+import "./PostList.css";
 
 const PostList = () => {
   const [posts, setPosts] = useState([]);
@@ -21,13 +22,19 @@ const PostList = () => {
   }, []);
 
   return (
-    <ul>
+    <ul className="post-list">
       {posts.map((post) => (
-        <li key={post.id}>
-          <img src={post.photoURL} alt={post.author} />
-          <p> {post.author}</p>
-          <p> {post.content}</p>
-          <p> {post.timestamp}</p>
+        <li key={post.id} className="post-item">
+          <img
+            src={post.photoURL}
+            alt={post.author}
+            className="post-author-img"
+          />
+          <div className="post-content">
+            <p className="post-author">{post.author}</p>
+            <p className="post-text">{post.content}</p>
+            <p className="post-timestamp">{post.timestamp}</p>
+          </div>
         </li>
       ))}
     </ul>

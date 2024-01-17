@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "firebase/compat/database";
 import { db, auth } from "../firebase";
+import "./WritePost.css";
 
 const WritePost = () => {
   const [content, setContent] = useState("");
@@ -27,12 +28,12 @@ const WritePost = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="form">
       <div>
         <label htmlFor="content"></label>
         <input
           type="text"
-          id="content"
+          id="input"
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
