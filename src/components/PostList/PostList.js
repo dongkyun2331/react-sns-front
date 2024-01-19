@@ -1,5 +1,6 @@
+//PostList.js
 import React, { useEffect, useState, useRef } from "react";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import "./PostList.css";
 
 const PostList = () => {

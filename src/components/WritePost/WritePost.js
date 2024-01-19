@@ -1,13 +1,14 @@
+//WritePost.js
 import React, { useState } from "react";
 import "firebase/compat/database";
-import { db, auth } from "../firebase";
+import { db, auth } from "../../firebase";
 import "./WritePost.css";
 
 const WritePost = () => {
   const [content, setContent] = useState("");
   const [author, setAuthor] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const now = new Date();
     const year = now.getFullYear();

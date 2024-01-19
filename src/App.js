@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
-import Chats from "./components/Chats";
+import Chats from "./components/Chats/Chats";
 const App = () => {
   return (
     <Router>

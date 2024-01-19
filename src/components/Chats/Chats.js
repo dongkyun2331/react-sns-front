@@ -1,9 +1,9 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
-import WritePost from "./WritePost";
-import PostList from "./PostList";
+import WritePost from "../WritePost/WritePost";
+import PostList from "../PostList/PostList";
 import "./Chats.css";
 
 const Chats = () => {
