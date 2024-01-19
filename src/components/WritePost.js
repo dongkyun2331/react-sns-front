@@ -7,7 +7,7 @@ const WritePost = () => {
   const [content, setContent] = useState("");
   const [author, setAuthor] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const now = new Date();
     const year = now.getFullYear();
@@ -17,6 +17,7 @@ const WritePost = () => {
     const minutes = now.getMinutes();
     const timestamp = `${year}-${month}-${date} ${hours}:${minutes}`;
     const user = auth.currentUser;
+
     db.ref("posts").push({
       content,
       author: user.displayName,
@@ -36,7 +37,6 @@ const WritePost = () => {
         onChange={(e) => setContent(e.target.value)}
         autocomplete="off"
       />
-
       <button type="submit">Submit</button>
     </form>
   );
